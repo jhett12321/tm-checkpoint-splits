@@ -1,0 +1,10 @@
+[meta]
+name = "CheckpointSplits"
+author = "Blackfeather"
+category = "Overlay"
+
+siteid = 190
+version = "1.0.0"
+
+[script]
+imports = [ "Icons.as" ]

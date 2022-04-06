@@ -1,0 +1,25 @@
+name: Pack Plugin
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  pack:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: plugin
+
+      - name: Pack Plugin
+        run: cd plugin && zip -r ../CheckpointSplits.op * -x '*.git*'
+
+      - name: Upload Plugin
+        uses: actions/upload-artifact@v2
+        with:
+          name: CheckpointSplits
+          path: CheckpointSplits.op
