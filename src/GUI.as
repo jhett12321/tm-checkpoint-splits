@@ -29,7 +29,7 @@ namespace GUI
     vec4 textBgColour = vec4(0, 0, 0, 0.867);
     vec4 textColour = vec4(1, 1, 1, 1);
 
-    Resources::Font@ font;
+    int font;
 
     int shadowX = 1;
     int shadowY = 1;
@@ -41,7 +41,7 @@ namespace GUI
 
     void Initialize()
     {
-	    @font = Resources::GetFont("Oswald-Regular.ttf");
+	    font = nvg::LoadFont("Oswald-Regular.ttf");
     }
 
     void CheckpointUpdate()
